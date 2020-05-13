@@ -17,7 +17,9 @@ import os
 import json
 import numpy as np
 
-from scipy.misc import imresize, imsave
+# from scipy.misc import imresize, imsave
+from imageio import imsave
+from skimage.transform import resize as imresize
 from scipy.signal import medfilt2d
 from PIL import Image
 

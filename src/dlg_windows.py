@@ -52,10 +52,11 @@ class ConfigDlg(QDialog):
 
     def __init__(self, VERSION):
         super(ConfigDlg, self).__init__()
-        loadUi('..\\gui\\config_dlg.ui', self)
-        self.setWindowIcon(QIcon('..\\img\\icon_16px.ico'))
+        gui_dir = 'gui'
+        loadUi(os.path.join('..',gui_dir,'config_dlg.ui'), self)
+        self.setWindowIcon(QIcon(os.path.join('..','img','icon_16px.ico')))
         self.label_version.setText('Version ' + VERSION)
-        self.labelIcon.setPixmap(QPixmap('..\\img\\logo.png'))
+        self.labelIcon.setPixmap(QPixmap(os.path.join('..','img','logo.png')))
         self.label_website.setText('<a href="https://github.com/SBEMimage">'
                                    'https://github.com/SBEMimage</a>')
         self.label_website.setOpenExternalLinks(True)
@@ -64,7 +65,7 @@ class ConfigDlg(QDialog):
         self.abort = False
         # Populate the list widget with existing .ini files
         inifile_list = []
-        for file in os.listdir('..\\cfg'):
+        for file in os.listdir(os.path.join('..','cfg')):
             if file.endswith('.ini'):
                 inifile_list.append(file)
         self.listWidget_filelist.addItems(inifile_list)
@@ -1174,13 +1175,13 @@ class AcqSettingsDlg(QDialog):
         super(AcqSettingsDlg, self).__init__()
         self.cfg = config
         self.stack = stack
-        loadUi('..\\gui\\acq_settings_dlg.ui', self)
+        loadUi(os.path.join('..', 'gui', 'acq_settings_dlg.ui'), self)
         self.setWindowModality(Qt.ApplicationModal)
-        self.setWindowIcon(QIcon('..\\img\\icon_16px.ico'))
+        self.setWindowIcon(QIcon(os.path.join('..', 'img', 'icon_16px.ico')))
         self.setFixedSize(self.size())
         self.show()
         self.pushButton_selectDir.clicked.connect(self.select_directory)
-        self.pushButton_selectDir.setIcon(QIcon('..\\img\\selectdir.png'))
+        self.pushButton_selectDir.setIcon(QIcon(os.path.join('..', 'img', 'selectdir.png')))
         self.pushButton_selectDir.setIconSize(QSize(16, 16))
         # Display current settings:
         self.lineEdit_baseDir.setText(self.cfg['acq']['base_dir'])

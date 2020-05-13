@@ -19,7 +19,8 @@ import json
 
 from time import sleep
 from PIL import Image
-from scipy.misc import imsave
+# from scipy.misc import imsave
+from imageio import imsave
 from dateutil.relativedelta import relativedelta
 from PyQt5.QtWidgets import QMessageBox
 

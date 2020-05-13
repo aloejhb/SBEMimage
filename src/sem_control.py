@@ -22,9 +22,9 @@
 from time import sleep
 
 import json
-import pythoncom
-import win32com.client   # required to access CZEMApi.ocx (Carl Zeiss EM API)
-from win32com.client import VARIANT  # necessary for API function calls
+# import pythoncom
+# import win32com.client   # required to access CZEMApi.ocx (Carl Zeiss EM API)
+# from win32com.client import VARIANT  # necessary for API function calls
 
 class SEM():
 
