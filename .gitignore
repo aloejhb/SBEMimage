@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Pytest
+.pytest_cache
+
 # Ignore configuration files, except defaults
 *.ini
 *.cfg
@@ -14,3 +17,6 @@ DMcom.*
 
 # Ignore virtual environment:
 venv/
+
+# Ignore _build folder in docs:
+docs/_build/

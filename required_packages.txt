@@ -1,0 +1,23 @@
+acq_func
+colorama # needed to suppress TIFFReadDirectory warnings in the console
+ctypes
+datetime
+glob
+imaplib
+json
+numpy as np
+os
+pythoncom
+re
+requests
+serial
+shutil
+smtplib
+socket
+string
+sys
+threading
+time
+utils
+validators
+win32com.client   # required to access CZEMApi.ocx (Carl Zeiss EM API)
